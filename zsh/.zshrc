@@ -106,11 +106,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias sudo='sudo ' # this allows to run aliases as sudo
 alias bcat="batcat"
 alias src="source $HOME/.zshrc"
 alias nzsh="nvim $HOME/.zshrc"
 alias ipython="python -m IPython"
 alias cleanhist="history -c"
+alias gobusterz="gobuster dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u $1"
+alias fast-nmap="nmap -sS --open -n -Pn -vvv --min-rate=5000 -p- $1"
+alias gorun="go run ./main.go"
+alias obsidian='/home/gunzf0x/.custom_scripts/Obsidian-1.4.16.AppImage'
 
 eval $(thefuck --alias)
 
@@ -126,4 +131,4 @@ _fix_cursor() {
 }
 
 precmd_functions+=(_fix_cursor)
-
+export PATH=$PATH:$HOME/.custom_scripts:/usr/local/go/bin:/home/gunzf0x/.local/bin:/home/gunzf0x/go/bin
